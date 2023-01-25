@@ -25,8 +25,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\TatterFitness.Bll\TatterFitness.Bll.csproj" />
-    <ProjectReference Include="..\TatterFitness.Models\TatterFitness.Models.csproj" />
+    <ProjectReference Include="shared\TatterFitness.Bll\TatterFitness.Bll.csproj" />
+    <ProjectReference Include="shared\TatterFitness.Models\TatterFitness.Models.csproj" />
   </ItemGroup>
 
 </Project>
