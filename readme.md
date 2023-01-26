@@ -6,6 +6,7 @@ This is the REST API for the [TatterFitness mobile app](https://github.com/Chris
   - [Exercise Types](#exercise-types)
   - [Exercise Modifiers](#exercise-modifiers)
   - [Storing a Workout](#storing-a-workout)
+    - [***Workout*** table](#workout-table)
 - [Swagger UI](#swagger-ui)
 
 
@@ -27,14 +28,32 @@ When a workout is performed, certain modifiers may have been made to an exercise
 - PBand
 - RBand
 
-Modifiers are stored in the <mark>ExerciseModiiersTable</mark>
+Modifiers are stored in the ***ExerciseModifiers*** table.
 
 ## Storing a Workout
 A workout is stored in 4 tables:
-- Workout
-- WorkoutExerciseSets
-- WorkoutExercises
-- WorkoutExerciseModifiers
+- ***Workout***
+- ***WorkoutExerciseSets***
+- ***WorkoutExercises***
+- ***WorkoutExerciseModifiers***
+
+### ***Workout*** table
+
+| Name  | Tye   | Allow Nulls  |
+| ------------ | ------------ | ------------ |
+| Id  | int   | Not NULL  |
+| Date  | DateTime   | Not NULL  |
+| UserId  | int  | Not NULL   |
+| Name  | varchar(50)  | NULL  |
+
+
+
+
+
+
+
+
+
 
 
 # Swagger UI
