@@ -3,10 +3,11 @@ This is the REST API for the [TatterFitness mobile app](https://github.com/Chris
 
 - [TatterFitness REST API](#tatterfitness-rest-api)
 - [Database Design](#database-design)
-  - [Exercise Types](#exercise-types)
-  - [Exercise Modifiers](#exercise-modifiers)
+  - [ExerciseTypes Table](#exercisetypes-table)
+  - [ExerciseModifiers Table](#exercisemodifiers-table)
   - [Storing a Workout](#storing-a-workout)
-    - [***Workout*** table](#workout-table)
+    - [Workout table](#workout-table)
+    - [WorkoutExercises and WorkoutExerciseSets tables](#workoutexercises-and-workoutexercisesets-tables)
 - [Swagger UI](#swagger-ui)
 
 
@@ -14,21 +15,19 @@ This is the REST API for the [TatterFitness mobile app](https://github.com/Chris
 
 # Database Design
 
-## Exercise Types
-There are 4 types of exercises in TF:
+## ExerciseTypes Table
+There are 4 types of exercises in TF, these are stored in the ***ExerciseTypes*** table.
 - Reps & Weight (e.g. Bench Press or Squat)
 - Cardio (e.g. Elliptical)
 - Duration & Weight (e.g. Timed Farmer's Carry)
 - Reps Only (e.g. Goodmornings or Leg Raises)
 
-## Exercise Modifiers
-When a workout is performed, certain modifiers may have been made to an exercise. Some modifiers are:
+## ExerciseModifiers Table
+When a workout is performed, modifiers may be made to the exercise. These are stored in the ***ExerciseModifiers*** table, some modifiers are:
 - Narrow Grip
 - Medium Grip
 - PBand
 - RBand
-
-Modifiers are stored in the ***ExerciseModifiers*** table.
 
 ## Storing a Workout
 A workout is stored in 4 tables:
@@ -37,14 +36,19 @@ A workout is stored in 4 tables:
 - ***WorkoutExercises***
 - ***WorkoutExerciseModifiers***
 
-### ***Workout*** table
+### Workout table
+When a workout is performed, one row is inserted here and contains:
+- The workout date.
+- The user id of the user working out.
+- The workout name. 
 
-| Name  | Tye   | Allow Nulls  |
-| ------------ | ------------ | ------------ |
-| Id  | int   | Not NULL  |
-| Date  | DateTime   | Not NULL  |
-| UserId  | int  | Not NULL   |
-| Name  | varchar(50)  | NULL  |
+### WorkoutExercises and WorkoutExerciseSets tables
+Workouts are normally seperated into exercises and the exercise then seperated into sets. When a workout exercise is performed (e.g. Bench Press) a row is stored in the ***WorkoutExercises*** table. This table stored:
+- The workout id of the workout.
+- The exercise id of the exercise.
+- The sequence (e.g. if Bench Press was the 2nd exercise performed, this value will be 2).
+- Any notes the user added for this exercise.
+
 
 
 
