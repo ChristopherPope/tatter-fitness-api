@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33122.133
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TatterFitness.Api", "api\TatterFitness.Api.csproj", "{2A7F8FAF-CD10-4334-AAC0-5B1AB8368707}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TatterFitness.Api", "TatterFitness.Api\TatterFitness.Api.csproj", "{2A7F8FAF-CD10-4334-AAC0-5B1AB8368707}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TatterFitness.Bll", "shared\TatterFitness.Bll\TatterFitness.Bll.csproj", "{1FD8EEC2-B6E4-4DF3-B3F6-8B7DCB58C735}"
 EndProject
