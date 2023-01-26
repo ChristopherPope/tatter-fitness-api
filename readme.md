@@ -1,13 +1,12 @@
 # TatterFitness REST API
 This is the REST API for the [TatterFitness mobile app](https://github.com/ChristopherPope/tatter-fitness-mobile) I wrote. It is written in .Net 6.0 and soon to be upgraded to 7.0 as soon as I find the time.
 
-<img src="/SwaggerUI.jpeg"></img>
-
 - [TatterFitness REST API](#tatterfitness-rest-api)
 - [Database Design](#database-design)
   - [Exercise Types](#exercise-types)
   - [Exercise Modifiers](#exercise-modifiers)
   - [Storing a Workout](#storing-a-workout)
+- [Swagger UI](#swagger-ui)
 
 
 
@@ -28,7 +27,7 @@ When a workout is performed, certain modifiers may have been made to an exercise
 - PBand
 - RBand
 
-Modifiers are stored in the ==ExerciseModiiersTable==
+Modifiers are stored in the <mark>ExerciseModiiersTable</mark>
 
 ## Storing a Workout
 A workout is stored in 4 tables:
@@ -36,3 +35,8 @@ A workout is stored in 4 tables:
 - WorkoutExerciseSets
 - WorkoutExercises
 - WorkoutExerciseModifiers
+
+
+# Swagger UI
+<img src="/SwaggerUI.jpeg"></img>
+
