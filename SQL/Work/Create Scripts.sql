@@ -1,6 +1,25 @@
 USE [TATTER-FITNESS]
 GO
-/****** Object:  Table [dbo].[BodyMetricRecords]    Script Date: 10/10/2022 9:28:31 AM ******/
+/****** Object:  User [IIS APPPOOL\TatterFitness]    Script Date: 1/26/2023 8:16:06 AM ******/
+CREATE USER [IIS APPPOOL\TatterFitness] FOR LOGIN [IIS APPPOOL\TatterFitness] WITH DEFAULT_SCHEMA=[dbo]
+GO
+/****** Object:  User [IIS APPPOOL\TatterFitness II]    Script Date: 1/26/2023 8:16:06 AM ******/
+CREATE USER [IIS APPPOOL\TatterFitness II] WITH DEFAULT_SCHEMA=[dbo]
+GO
+/****** Object:  User [IIS APPPOOL\TFVideos]    Script Date: 1/26/2023 8:16:06 AM ******/
+CREATE USER [IIS APPPOOL\TFVideos] FOR LOGIN [IIS APPPOOL\TFVideos] WITH DEFAULT_SCHEMA=[dbo]
+GO
+ALTER ROLE [db_datareader] ADD MEMBER [IIS APPPOOL\TatterFitness]
+GO
+ALTER ROLE [db_datawriter] ADD MEMBER [IIS APPPOOL\TatterFitness]
+GO
+ALTER ROLE [db_datareader] ADD MEMBER [IIS APPPOOL\TatterFitness II]
+GO
+ALTER ROLE [db_datawriter] ADD MEMBER [IIS APPPOOL\TatterFitness II]
+GO
+ALTER ROLE [db_owner] ADD MEMBER [IIS APPPOOL\TFVideos]
+GO
+/****** Object:  Table [dbo].[BodyMetricRecords]    Script Date: 1/26/2023 8:16:06 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -27,7 +46,7 @@ CREATE TABLE [dbo].[BodyMetricRecords](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[ExerciseModifiers]    Script Date: 10/10/2022 9:28:31 AM ******/
+/****** Object:  Table [dbo].[ExerciseModifiers]    Script Date: 1/26/2023 8:16:06 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -42,7 +61,7 @@ CREATE TABLE [dbo].[ExerciseModifiers](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Exercises]    Script Date: 10/10/2022 9:28:31 AM ******/
+/****** Object:  Table [dbo].[Exercises]    Script Date: 1/26/2023 8:16:06 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -58,7 +77,7 @@ CREATE TABLE [dbo].[Exercises](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[ExerciseTypes]    Script Date: 10/10/2022 9:28:31 AM ******/
+/****** Object:  Table [dbo].[ExerciseTypes]    Script Date: 1/26/2023 8:16:06 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -72,7 +91,7 @@ CREATE TABLE [dbo].[ExerciseTypes](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[RoutineExercises]    Script Date: 10/10/2022 9:28:31 AM ******/
+/****** Object:  Table [dbo].[RoutineExercises]    Script Date: 1/26/2023 8:16:06 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -87,7 +106,7 @@ CREATE TABLE [dbo].[RoutineExercises](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Routines]    Script Date: 10/10/2022 9:28:31 AM ******/
+/****** Object:  Table [dbo].[Routines]    Script Date: 1/26/2023 8:16:06 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -102,7 +121,7 @@ CREATE TABLE [dbo].[Routines](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Users]    Script Date: 10/10/2022 9:28:31 AM ******/
+/****** Object:  Table [dbo].[Users]    Script Date: 1/26/2023 8:16:06 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -116,7 +135,7 @@ CREATE TABLE [dbo].[Users](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Videos]    Script Date: 10/10/2022 9:28:31 AM ******/
+/****** Object:  Table [dbo].[Videos]    Script Date: 1/26/2023 8:16:06 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -132,7 +151,7 @@ CREATE TABLE [dbo].[Videos](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[WorkoutExerciseModifiers]    Script Date: 10/10/2022 9:28:31 AM ******/
+/****** Object:  Table [dbo].[WorkoutExerciseModifiers]    Script Date: 1/26/2023 8:16:06 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -147,7 +166,7 @@ CREATE TABLE [dbo].[WorkoutExerciseModifiers](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[WorkoutExercises]    Script Date: 10/10/2022 9:28:31 AM ******/
+/****** Object:  Table [dbo].[WorkoutExercises]    Script Date: 1/26/2023 8:16:06 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -164,7 +183,7 @@ CREATE TABLE [dbo].[WorkoutExercises](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[WorkoutExerciseSets]    Script Date: 10/10/2022 9:28:31 AM ******/
+/****** Object:  Table [dbo].[WorkoutExerciseSets]    Script Date: 1/26/2023 8:16:06 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -189,7 +208,7 @@ CREATE TABLE [dbo].[WorkoutExerciseSets](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Workouts]    Script Date: 10/10/2022 9:28:31 AM ******/
+/****** Object:  Table [dbo].[Workouts]    Script Date: 1/26/2023 8:16:06 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -279,7 +298,7 @@ REFERENCES [dbo].[Workouts] ([Id])
 GO
 ALTER TABLE [dbo].[Workouts] CHECK CONSTRAINT [FK_Workouts_Workouts]
 GO
-/****** Object:  StoredProcedure [dbo].[sp_GetLatestWorkoutExcerciseIds]    Script Date: 10/10/2022 9:28:31 AM ******/
+/****** Object:  StoredProcedure [dbo].[sp_GetLatestWorkoutExcerciseIds]    Script Date: 1/26/2023 8:16:06 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
