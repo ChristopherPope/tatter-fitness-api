@@ -8,6 +8,8 @@ This is the REST API for the [TatterFitness mobile app](https://github.com/Chris
   - [Storing a Workout](#storing-a-workout)
     - [Workout table](#workout-table)
     - [WorkoutExercises and WorkoutExerciseSets tables](#workoutexercises-and-workoutexercisesets-tables)
+    - [Videos](#videos)
+    - [Routines](#routines)
 - [Database Diagram](#database-diagram)
 - [Swagger UI](#swagger-ui)
 
@@ -24,7 +26,7 @@ There are 4 types of exercises in TF, these are stored in the ***ExerciseTypes**
 - Reps Only (e.g. Goodmornings or Leg Raises)
 
 ## ExerciseModifiers Table
-When a workout is performed, modifiers may be made to the exercise. These are stored in the ***ExerciseModifiers*** table, some modifiers are:
+When a workout is performed, modifiers may be added to the exercise. These are stored in the ***ExerciseModifiers*** table, some modifiers are:
 - Narrow Grip
 - Medium Grip
 - PBand
@@ -38,22 +40,16 @@ A workout is stored in 4 tables:
 - ***WorkoutExerciseModifiers***
 
 ### Workout table
-When a workout is performed, one row is inserted here and contains:
-- The workout date.
-- The user id of the user working out.
-- The workout name. 
+When a workout is performed, one row is inserted here.
 
 ### WorkoutExercises and WorkoutExerciseSets tables
-Workouts are normally seperated into exercises and the exercise then seperated into sets. When a workout exercise is performed (e.g. Bench Press) a row is stored in the ***WorkoutExercises*** table. This table stored:
-- The workout id of the workout.
-- The exercise id of the exercise.
-- The sequence (e.g. if Bench Press was the 2nd exercise performed, this value will be 2).
-- Any notes the user added for this exercise.
+A lifter will normally perform the workout in sets. When a workout exercise is performed (e.g. Bench Press) a row is stored in the ***WorkoutExercises*** table with the sets are stored in the ***WorkoutExerciseSets*** table.
 
+### Videos
+Workout videos are stored in the ***Videos*** table with a foreign key to the ***WorkoutExercises*** table.
 
-
-
-
+### Routines
+A user may store multiple routines in the ***Routines*** table with routine exercises stored in the ***RoutineExercises*** table.
 
 
 
