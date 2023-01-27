@@ -8,6 +8,7 @@ This is the REST API for the [TatterFitness mobile app](https://github.com/Chris
   - [Storing a Workout](#storing-a-workout)
     - [Workout table](#workout-table)
     - [WorkoutExercises and WorkoutExerciseSets tables](#workoutexercises-and-workoutexercisesets-tables)
+- [Database Diagram](#database-diagram)
 - [Swagger UI](#swagger-ui)
 
 
@@ -59,6 +60,9 @@ Workouts are normally seperated into exercises and the exercise then seperated i
 
 
 
+
+# Database Diagram
+<img src="/DbDiagram.jpg"></img>
 
 # Swagger UI
 <img src="/SwaggerUI.jpeg"></img>
