@@ -43,10 +43,14 @@ A workout is stored in 4 tables:
 When a workout is performed, one row is inserted here.
 
 ### WorkoutExercises and WorkoutExerciseSets tables
-A lifter will normally perform the workout in sets. When a workout exercise is performed (e.g. Bench Press) a row is stored in the ***WorkoutExercises*** table with the sets are stored in the ***WorkoutExerciseSets*** table.
+A lifter will normally perform the workout in sets. When a workout exercise is performed (e.g. Bench Press) a row is stored in the ***WorkoutExercises*** table with the sets stored in the ***WorkoutExerciseSets*** table.
 
 ## Videos
-Workout videos are stored in the ***Videos*** table with a foreign key to the ***WorkoutExercises*** table.
+Workout videos are stored in the ***Videos*** table with a foreign key to the ***WorkoutExercises*** table. 
+
+Videos are imported using the [Video Manager](https://github.com/ChristopherPope/tatter-fitness-video-manager).
+
+Videos are viewed using [Videos Web Site](https://github.com/ChristopherPope/tatter-fitness-videos)
 
 ## Routines
 A user may store multiple routines in the ***Routines*** table with routine exercises stored in the ***RoutineExercises*** table.
