@@ -1,4 +1,4 @@
-declare @workoutId as int = 15797
+declare @workoutId as int = 15800
 
 delete WorkoutExerciseSets 
 	from WorkoutExerciseSets s
@@ -17,3 +17,6 @@ delete Videos
 
 delete from WorkoutExercises where WorkoutId = @workoutId
 delete from Workouts where id = @workoutId
+
+
+select * from Workouts order by id desc

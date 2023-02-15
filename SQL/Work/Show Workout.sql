@@ -10,7 +10,7 @@ declare @mods table(WorkoutExerciseId int, Mods varchar(1000))
 
 
 select @workoutId = max(id) from Workouts
---select @workoutId = 15776
+--select @workoutId = 15798
 
 insert into @mods
 select we.id, STRING_AGG(em.Name, ', ') from WorkoutExerciseModifiers m
@@ -77,8 +77,6 @@ end
 
 close cur1
 deallocate cur1
-
-
 
 
 
