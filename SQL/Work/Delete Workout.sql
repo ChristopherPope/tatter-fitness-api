@@ -1,4 +1,11 @@
-declare @workoutId as int = 15800
+delete from Workouts where
+Id in (select Id from Workouts where not Id in (select WorkoutId from WorkoutExercises))
+
+
+
+
+
+declare @workoutId as int = 16808
 
 delete WorkoutExerciseSets 
 	from WorkoutExerciseSets s
