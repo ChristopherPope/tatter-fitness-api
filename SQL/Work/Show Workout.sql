@@ -80,9 +80,9 @@ deallocate cur1
 
 
 
+update WorkoutExerciseSets set RepCount = 10 where id = 9236
 
-
-
+select * from WorkoutExerciseSets where id = 9326
 
 
 

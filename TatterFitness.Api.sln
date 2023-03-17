@@ -11,6 +11,18 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TatterFitness.Models", "sha
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TatterFitness.Dal", "shared\TatterFitness.Dal\TatterFitness.Dal.csproj", "{003FC804-EFAD-4E71-A4CF-92FD47A4EAE6}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SQL", "SQL", "{F157A719-C23F-4CA9-9F60-CA18CA61FB72}"
+	ProjectSection(SolutionItems) = preProject
+		SQL\Work\ChangeUsers.sql = SQL\Work\ChangeUsers.sql
+		SQL\Work\Create Scripts.sql = SQL\Work\Create Scripts.sql
+		SQL\Work\Delete Workout.sql = SQL\Work\Delete Workout.sql
+		SQL\Work\Modify Workout.sql = SQL\Work\Modify Workout.sql
+		SQL\Work\Routine Exercises.sql = SQL\Work\Routine Exercises.sql
+		SQL\Work\Show Exercises.sql = SQL\Work\Show Exercises.sql
+		SQL\Work\Show Workout.sql = SQL\Work\Show Workout.sql
+		SQL\Work\VideoWork.sql = SQL\Work\VideoWork.sql
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
