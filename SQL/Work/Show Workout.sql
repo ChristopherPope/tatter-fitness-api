@@ -5,9 +5,12 @@ declare @exTypeId as int
 declare @exTypeName as varchar(25)
 declare @mods table(WorkoutExerciseId int, Mods varchar(1000))
 
-
 select @workoutId = max(id) from Workouts
---select @workoutId = 17812
+--lect @workoutId = 19838
+
+
+
+
 
 insert into @mods
 select we.id, STRING_AGG(em.Name, ', ') from WorkoutExerciseModifiers m
@@ -55,7 +58,7 @@ begin
 		where we.id = @weId and we.ExerciseId = @exerciseId
 		order by s.SetNumber
 	else if (@exTypeId = 3) -- RepsAndWeight
-		select we.id "WorkoutExerciseId", e.Id "ExcerciseId", s.id "SetId", e.Name "Exercise", @exTypeName as ExerciseType, s.SetNumber, s.RepCount, s.Weight, s.Volume
+		select we.id "WorkoutExerciseId", e.Id "ExcerciseId", s.id "SetId", we.FtoWeekNumber, we.FtoTrainingMax, e.Name "Exercise", @exTypeName as ExerciseType, s.SetNumber, s.RepCount, s.Weight, s.Volume
 		from WorkoutExercises we
 		join Exercises e on we.ExerciseId = e.Id
 		join WorkoutExerciseSets s on we.id = s.WorkoutExerciseId
@@ -78,11 +81,6 @@ deallocate cur1
 
 
 
-
-
-update WorkoutExerciseSets set RepCount = 10 where id = 9236
-
-select * from WorkoutExerciseSets where id = 9326
 
 
 

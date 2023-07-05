@@ -5,7 +5,7 @@ Id in (select Id from Workouts where not Id in (select WorkoutId from WorkoutExe
 
 
 
-declare @workoutId as int = 18821
+declare @workoutId as int = 19840
 
 delete WorkoutExerciseSets 
 	from WorkoutExerciseSets s
